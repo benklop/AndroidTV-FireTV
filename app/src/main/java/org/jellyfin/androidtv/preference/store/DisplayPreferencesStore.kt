@@ -136,7 +136,8 @@ abstract class DisplayPreferencesStore(
 		)
 
 	override fun runMigrations(body: MigrationContext<Unit, Unit>.() -> Unit) {
-		TODO("The DisplayPreferencesStore does not support migrations")
+		// Display preferences are server-backed and have no local store version.
+		Timber.w("DisplayPreferencesStore does not support migrations; ignoring migration block")
 	}
 
 	/**
